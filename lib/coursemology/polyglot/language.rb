@@ -29,6 +29,7 @@ class Coursemology::Polyglot::Language
     autoload :JavaScript
     autoload :CPlusPlus
     autoload :Java
+    autoload :R
   end
 
   # Marks the current class as a concrete language.
@@ -44,7 +45,7 @@ class Coursemology::Polyglot::Language
 
     concrete_class_methods = Module.new do
       define_method(:display_name) { display_name }
-      define_method(:docker_image) { docker_image } if docker_image
+      define_method(:docker_image) { docker_image }
     end
 
     extend concrete_class_methods

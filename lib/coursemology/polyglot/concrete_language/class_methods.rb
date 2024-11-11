@@ -4,6 +4,9 @@
 #
 # This is deliberately defined so that consumers of this library can inject methods into all
 # concrete languages' classes.
+
+# TODO: The "docker_image" field for all extant languages is explicitly defined.
+# Is there a reason this function still exists?
 module Coursemology::Polyglot::ConcreteLanguage::ClassMethods
   # The default algorithm for translating a language to a corresponding Docker image name.
   #
