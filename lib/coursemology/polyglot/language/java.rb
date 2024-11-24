@@ -12,4 +12,8 @@ class Coursemology::Polyglot::Language::Java < Coursemology::Polyglot::Language
   class Java17 < Coursemology::Polyglot::Language::Java
     concrete_language 'Java 17', docker_image: 'java:17'
   end
+
+  class Java21 < Coursemology::Polyglot::Language::Java
+    concrete_language 'Java 21', docker_image: 'java:21'
+  end
 end
