@@ -6,5 +6,9 @@ RSpec.describe Coursemology::Polyglot::Language::R do
     it 'returns the correct display name' do
       expect(subject.class.display_name).to eq('R 4.1')
     end
+
+    it 'returns a nil docker image' do
+      expect(subject.class.docker_image).to be_nil
+    end
   end
 end

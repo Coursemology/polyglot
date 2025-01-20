@@ -46,6 +46,18 @@ class Coursemology::Polyglot::Language
     concrete_class_methods = Module.new do
       define_method(:display_name) { display_name }
       define_method(:docker_image) { docker_image }
+
+      define_method(:dependencies) { instance_variable_get('@dependencies') }
+      define_method(:has_dependency) do |name, version:, title: nil, aliases: [], href: nil|
+        fail ArgumentError unless !name.nil? && !version.nil?
+        instance_variable_set('@dependencies', (instance_variable_get('@dependencies') || []) + [{
+          name: name,
+          version: version,
+          title: title,
+          aliases: aliases,
+          href: href
+        }]) 
+      end
     end
 
     extend concrete_class_methods
