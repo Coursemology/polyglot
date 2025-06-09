@@ -91,4 +91,22 @@ class Coursemology::Polyglot::Language::Python < Coursemology::Polyglot::Languag
     has_dependency 'torch', version: '2.3.0.dev20240107+cpu', title: 'pytorch', href: 'https://pytorch.org/docs'
     has_dependency 'torchvision', version: '0.18.0.dev20240107+cpu', aliases: ['tv'], href: 'https://pytorch.org/vision'
   end
+
+  class Python3Point13 < Coursemology::Polyglot::Language::Python
+    concrete_language 'Python 3.13', docker_image: 'python:3.13'
+
+    has_dependency 'fnss', version: '0.9.1', href: 'https://fnss.readthedocs.io'
+    has_dependency 'matplotlib', version: '3.10.3', aliases: ['plt'], href: 'https://matplotlib.org'
+    has_dependency 'networkx', version: '3.5', aliases: ['nx'], href: 'https://networkx.github.io/documentation'
+    has_dependency 'numpy', version: '2.3.0', aliases: ['np'], href: 'https://numpy.org'
+    has_dependency 'pandas', version: '2.3.0', aliases: ['pd'], href: 'https://pandas.pydata.org/docs/'
+    has_dependency 'pillow', version: '11.2.1', href: 'https://pillow.readthedocs.io'
+    has_dependency 'PuLP', version: '3.2.1', href: 'https://coin-or.github.io/pulp/'
+    has_dependency 'scikit-learn', version: '1.7.0', aliases: ['sklearn'], href: 'https://scikit-learn.org'
+    has_dependency 'scipy', version: '1.15.3', aliases: ['sp'], href: 'https://docs.scipy.org/doc/scipy/'
+    has_dependency 'sympy', version: '1.14.0', href: 'https://www.sympy.org/'
+    has_dependency 'timeout-decorator', version: '0.5.0', href: 'https://pypi.org/project/timeout-decorator/'
+    has_dependency 'torch', version: '2.7.0+cpu', title: 'pytorch', href: 'https://pytorch.org/docs'
+    has_dependency 'torchvision', version: '0.22.0+cpu', aliases: ['tv'], href: 'https://pytorch.org/vision'
+  end
 end
