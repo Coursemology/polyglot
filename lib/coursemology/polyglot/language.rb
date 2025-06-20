@@ -30,6 +30,10 @@ class Coursemology::Polyglot::Language
     autoload :CPlusPlus
     autoload :Java
     autoload :R
+    autoload :CSharp
+    autoload :TypeScript
+    autoload :Go
+    autoload :Rust
   end
 
   # Marks the current class as a concrete language.
