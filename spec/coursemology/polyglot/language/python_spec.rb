@@ -136,4 +136,21 @@ RSpec.describe Coursemology::Polyglot::Language::Python do
       expect(subject.class.dependencies[2][:version]).to eq('3.5')
     end
   end
+
+  describe Coursemology::Polyglot::Language::Python::Python3Point14 do
+    it 'returns the correct display name' do
+      expect(subject.class.display_name).to eq('Python 3.14')
+    end
+
+    it 'returns the correct dependency versions' do
+      expect(subject.class.dependencies[0][:name]).to eq('flask')
+      expect(subject.class.dependencies[0][:version]).to eq('3.1.3')
+
+      expect(subject.class.dependencies[1][:name]).to eq('fnss')
+      expect(subject.class.dependencies[1][:version]).to eq('0.9.1')
+
+      expect(subject.class.dependencies[2][:name]).to eq('formulas')
+      expect(subject.class.dependencies[2][:version]).to eq('1.3.4')
+    end
+  end
 end

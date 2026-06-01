@@ -109,4 +109,25 @@ class Coursemology::Polyglot::Language::Python < Coursemology::Polyglot::Languag
     has_dependency 'torch', version: '2.7.0+cpu', title: 'pytorch', href: 'https://pytorch.org/docs'
     has_dependency 'torchvision', version: '0.22.0+cpu', aliases: ['tv'], href: 'https://pytorch.org/vision'
   end
+
+  class Python3Point14 < Coursemology::Polyglot::Language::Python
+    concrete_language 'Python 3.14', docker_image: 'python:3.14'
+
+    has_dependency 'flask', version: '3.1.3', href: 'https://flask.palletsprojects.com'
+    has_dependency 'fnss', version: '0.9.1', href: 'https://fnss.readthedocs.io'
+    has_dependency 'formulas[excel]', version: '1.3.4', href: 'https://pypi.org/project/formulas/'
+    has_dependency 'matplotlib', version: '3.10.8', aliases: ['plt'], href: 'https://matplotlib.org'
+    has_dependency 'networkx', version: '3.6.1', aliases: ['nx'], href: 'https://networkx.github.io/documentation'
+    has_dependency 'numpy', version: '2.4.4', aliases: ['np'], href: 'https://numpy.org'
+    has_dependency 'pandas', version: '3.0.2', aliases: ['pd'], href: 'https://pandas.pydata.org/docs/'
+    has_dependency 'pillow', version: '12.2.0', href: 'https://pillow.readthedocs.io'
+    has_dependency 'PuLP', version: '3.3.0', href: 'https://coin-or.github.io/pulp/'
+    has_dependency 'scikit-learn', version: '1.8.0', aliases: ['sklearn'], href: 'https://scikit-learn.org'
+    has_dependency 'scipy', version: '1.17.1', aliases: ['sp'], href: 'https://docs.scipy.org/doc/scipy/'
+    has_dependency 'sympy', version: '1.14.0', href: 'https://www.sympy.org/'
+    has_dependency 'time-machine', version: '3.2.0', href: 'https://pypi.org/project/time-machine/'
+    has_dependency 'timeout-decorator', version: '0.5.0', href: 'https://pypi.org/project/timeout-decorator/'
+    has_dependency 'torch', version: '2.11.0+cpu', title: 'pytorch', href: 'https://pytorch.org/docs'
+    has_dependency 'torchvision', version: '0.26.0+cpu', aliases: ['tv'], href: 'https://pytorch.org/vision'
+  end
 end
