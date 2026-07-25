@@ -25,8 +25,12 @@ programming languages supported in Coursemology.
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'coveralls'
+  spec.add_development_dependency 'coveralls_reborn'
   spec.add_development_dependency 'codeclimate-test-reporter'
+
+  # Runs the test suite against multiple Rails versions. See the Appraisals file and
+  # gemfiles/ directory.
+  spec.add_development_dependency 'appraisal', '~> 2.5'
 
   spec.add_dependency 'activesupport', '>= 4.2'
 

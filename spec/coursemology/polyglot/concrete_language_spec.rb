@@ -6,38 +6,21 @@ RSpec.describe Coursemology::Polyglot::ConcreteLanguage do
     concrete_language 'Dummy Concrete Language'
   end
 
-  class self::DummyOverriddenNameLanguage < self::DummyLanguage
-    concrete_language 'Dummy Overridden Concrete Language'
-
-    def self.name
-      'Coursemology::Polyglot::Language::Dummy::OverriddenNameLanguage'.freeze
-    end
+  class self::DummyLanguageWithDockerImage < self::DummyLanguage
+    concrete_language 'Dummy Docker Image Language', docker_image: 'dummy-docker'
   end
 
   describe '.docker_image' do
-    it 'removes the Coursemology::Polyglot::Language prefix' do
-      expect(self.class::DummyOverriddenNameLanguage.docker_image).to \
-        start_with('dummy')
-    end
-
-    it 'preserves the nesting of namespaces' do
-      expect(self.class::DummyOverriddenNameLanguage.docker_image).to \
-        eq('dummy-overridden_name_language')
-    end
-
-    context 'when the name contains Point surrounded by numerals' do
-      class self::DummyLanguage1Point0 < self::DummyLanguage; end
-
-      it 'converts "Point" to dots' do
-        expect(self.class::DummyLanguage1Point0.docker_image).to end_with('dummy_language1.0')
+    context 'when no explicit Docker image is specified' do
+      it 'returns nil' do
+        # An unset Docker image marks a language as not runnable (e.g. a deprecated language).
+        expect(self.class::DummyLanguage.docker_image).to be_nil
       end
     end
 
-    context 'when the name contains Point but not surrounded by numerals' do
-      class self::DummyLanguagePoint < self::DummyLanguage; end
-
-      it 'preserves "Point"' do
-        expect(self.class::DummyLanguagePoint.docker_image).to end_with('dummy_language_point')
+    context 'when an explicit Docker image is specified' do
+      it 'returns the explicit image name' do
+        expect(self.class::DummyLanguageWithDockerImage.docker_image).to eq('dummy-docker')
       end
     end
   end

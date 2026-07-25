@@ -149,7 +149,7 @@ RSpec.describe Coursemology::Polyglot::Language::Python do
       expect(subject.class.dependencies[1][:name]).to eq('fnss')
       expect(subject.class.dependencies[1][:version]).to eq('0.9.1')
 
-      expect(subject.class.dependencies[2][:name]).to eq('formulas')
+      expect(subject.class.dependencies[2][:name]).to eq('formulas[excel]')
       expect(subject.class.dependencies[2][:version]).to eq('1.3.4')
     end
   end

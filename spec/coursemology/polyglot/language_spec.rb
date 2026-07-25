@@ -38,9 +38,8 @@ RSpec.describe Coursemology::Polyglot::Language do
     end
 
     context 'when no explicit Docker image is specified' do
-      it 'generates an image name' do
-        expect(self.class::DummyLanguage.docker_image).to \
-          eq('r_spec-example_groups-coursemology_polyglot_language-dummy_language')
+      it 'returns nil' do
+        expect(self.class::DummyLanguage.docker_image).to be_nil
       end
     end
   end
